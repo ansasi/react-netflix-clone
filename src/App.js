@@ -1,25 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AuthContextProvider } from "./context/AuthContext";
+import Netflix from "./pages/Netflix";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Player from "./pages/Player";
+import TVShows from "./pages/TVShows";
+import Movies from "./pages/Movies";
+import UserListedMovies from "./pages/UserListedMovies";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AuthContextProvider>
+        <BrowserRouter basename="/react-netflix-clone">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <Netflix />
+                </ProtectedRoute>
+              }
+            />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<Signup />} />
+            <Route
+              path="/player"
+              element={
+                <ProtectedRoute>
+                  <Player />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/shows"
+              element={
+                <ProtectedRoute>
+                  <TVShows />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/movies"
+              element={
+                <ProtectedRoute>
+                  <Movies />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/mylist"
+              element={
+                <ProtectedRoute>
+                  <UserListedMovies />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </AuthContextProvider>
+    </>
   );
-}
+};
 
 export default App;

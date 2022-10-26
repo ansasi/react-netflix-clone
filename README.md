@@ -12,7 +12,7 @@ npm install axios firebase styled-components react-icons react-redux @reduxjs/to
 - Start Node App
 - Start React App
 
-## Errors to fix
+### Errors to fix
 
 - It doesn't re render after movies are updated in store
 

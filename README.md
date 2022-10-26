@@ -9,6 +9,10 @@
 npm install axios firebase styled-components react-icons react-redux @reduxjs/toolkit react-router-dom.
 ```
 
+```
+npm install gh-pages --save-dev
+```
+
 - Start Node App
 - Start React App
 

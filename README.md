@@ -1,4 +1,4 @@
-# Netflix Clone built using React, Redux Toolkit, Firebase, Styled Components, Axios, Node.js, Express and MongoDB.
+# Netflix Clone built using React, Redux Toolkit, Firebase, Styled Components, Axios, Node.js, Express and MongoDB. It is designed for PC web browsers.
 
 ## Steps to Start the App
 
@@ -22,4 +22,5 @@ npm install gh-pages --save-dev
 
 ### Future improvements
 
+- Smartphone and tablet version
 - Liked, disliked and listed must be charged at the beginning
